@@ -32,9 +32,9 @@ def get_data(shuf=True, data=2, btch_size=1):
     elif data == 1:
         trainset = torchvision.datasets.FashionMNIST(root='./data', train=True, download=True, transform=transform)
     elif data == 2:
-        trainset = torchvision.datasets.CIFAR10(root='./data', train=True, download=False, transform=transform)
+        trainset = torchvision.datasets.CIFAR10(root='./data', train=True, download=True, transform=transform)
     else:
-        trainset = torchvision.datasets.SVHN(root='./data', split='train', download=False, transform=transform)
+        trainset = torchvision.datasets.SVHN(root='./data', split='train', download=True, transform=transform)
 
     train_loader = torch.utils.data.DataLoader(trainset, batch_size=btch_size, shuffle=shuf)
 
